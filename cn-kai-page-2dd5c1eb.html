@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开元棋牌 · 信息索引与资料专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+            background-color: #f6f4ef;
+            color: #2e2b26;
+            line-height: 1.7;
+        }
+
+        .page-wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        /* ---------- 深色头图 hero ---------- */
+        .hero {
+            background: linear-gradient(145deg, #1f2429 0%, #2d353c 100%);
+            color: #eae6dd;
+            padding: 60px 30px 48px;
+            border-radius: 0 0 48px 48px;
+            margin: 0 -24px 48px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "◈";
+            position: absolute;
+            right: -20px;
+            bottom: -40px;
+            font-size: 200px;
+            opacity: 0.04;
+            color: #cdb891;
+            pointer-events: none;
+            transform: rotate(15deg);
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #b8aea0;
+            border-left: 3px solid #b8915c;
+            padding-left: 16px;
+            margin: 16px 0 6px;
+            font-weight: 350;
+        }
+
+        .hero .meta-tag {
+            display: inline-block;
+            margin-top: 20px;
+            background: rgba(205, 184, 145, 0.18);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #cdb891;
+            border: 1px solid rgba(205, 184, 145, 0.25);
+        }
+
+        /* ---------- 卡片式正文区 ---------- */
+        .topic-card {
+            background: white;
+            border-radius: 28px;
+            padding: 32px 34px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.2s;
+        }
+
+        .topic-card:hover {
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+        }
+
+        .topic-card h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            color: #25221f;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .topic-card h2 .accent-line {
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background: #b8915c;
+            border-radius: 8px;
+            margin-right: 8px;
+        }
+
+        .topic-card p {
+            margin-bottom: 16px;
+        }
+
+        .topic-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-accent {
+            color: #b2722b;
+            font-weight: 450;
+        }
+
+        .inline-link {
+            color: #a1631f;
+            text-decoration: none;
+            border-bottom: 1px dashed #cca27b;
+            transition: border 0.15s, color 0.15s;
+        }
+
+        .inline-link:hover {
+            color: #7b4d1b;
+            border-bottom: 1px solid #7b4d1b;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 32px;
+            margin: 18px 0 8px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .feature-grid li {
+            flex: 1 1 200px;
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.98rem;
+        }
+
+        .feature-grid li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #b8915c;
+            font-weight: 700;
+            font-size: 1.4rem;
+            line-height: 1.3;
+        }
+
+        .faq-item {
+            margin: 12px 0;
+            padding: 12px 18px;
+            background: #f6f3ef;
+            border-radius: 18px;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #3b3530;
+            margin-bottom: 2px;
+        }
+
+        .faq-item p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #4c4540;
+        }
+
+        .divider-soft {
+            height: 1px;
+            background: linear-gradient(to right, #e2dad1, transparent);
+            margin: 30px 0 20px;
+        }
+
+        /* ---------- 页尾 ---------- */
+        .page-footer {
+            margin-top: 48px;
+            padding: 28px 0 10px;
+            text-align: center;
+            border-top: 1px solid #dbd2c6;
+            font-size: 0.92rem;
+            color: #6f665d;
+        }
+
+        .page-footer .footer-note {
+            background: #f0ebe4;
+            display: inline-block;
+            padding: 8px 28px;
+            border-radius: 60px;
+            margin-bottom: 18px;
+            color: #4d443b;
+            font-weight: 380;
+        }
+
+        .page-footer .footer-note a {
+            color: #a1631f;
+            text-decoration: none;
+            font-weight: 450;
+        }
+
+        .page-footer .footer-note a:hover {
+            text-decoration: underline;
+        }
+
+        .page-footer small {
+            display: block;
+            opacity: 0.6;
+            margin-top: 12px;
+        }
+
+        /* ---------- 响应式 ---------- */
+        @media (max-width: 680px) {
+            .page-wrap {
+                padding: 0 16px 60px;
+            }
+
+            .hero {
+                padding: 44px 20px 36px;
+                margin: 0 -16px 36px;
+                border-radius: 0 0 32px 32px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .topic-card {
+                padding: 24px 20px;
+                border-radius: 22px;
+            }
+
+            .feature-grid li {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .hero .sub {
+                font-size: 0.95rem;
+            }
+            .topic-card h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <!-- 深色头图 -->
+        <header class="hero">
+            <h1>开元棋牌 · 资料索引</h1>
+            <div class="sub">从整理到索引，一份关于信息结构化的笔记</div>
+            <span class="meta-tag">专题 · 杂志版</span>
+        </header>
+
+        <!-- 背景说明 + 第一段自然介绍 -->
+        <section class="topic-card">
+            <h2><span class="accent-line"></span>为什么做这样一份索引</h2>
+            <p>多年前第一次接触到<a href="https://cn-kai-yuan.com" class="inline-link">开元棋牌</a>这个名称时，我并没有立刻去点开页面，而是先把它记在了一个数字笔记本里。后来陆续看到一些讨论、截图和用户笔记，发现围绕“开元棋牌”其实积累了相当多的碎片内容——规则介绍、版本差异、界面风格以及不同设备上的体验反馈。这些信息散落在论坛、个人博客和社交媒体的时间线里，如果能有一个清晰的索引入口，对后来想了解的人来说会方便很多。</p>
+            <p>这个页面就是基于这样的想法做出来的：不追求面面俱到，而是把关键的信息线索集中呈现，让浏览者自己判断哪些内容值得细看。对我来说，整理和标注本身就是一种学习。</p>
+        </section>
+
+        <!-- 第二段：特点与资料维度 -->
+        <section class="topic-card">
+            <h2><span class="accent-line"></span>资料整理中注意到的几个侧面</h2>
+            <p>在梳理素材的时候，我注意到大家讨论比较多的几个方向，列出来供你参考：</p>
+            <ul class="feature-grid">
+                <li>界面与操作习惯：不同版本下的布局反馈</li>
+                <li>规则说明与常见术语：新手容易混淆的细节</li>
+                <li>平台适配差异：移动端与桌面的实际体验对比</li>
+                <li>社区讨论脉络：哪些问题被反复提及</li>
+            </ul>
+            <p>当然，这些只是我个人的观察框架。每个人的关注点不一样，你也可以直接从 <a href="https://cn-kai-yuan.com" class="inline-link">开元棋牌</a> 的主页面出发，找到自己感兴趣的部分。</p>
+        </section>
+
+        <!-- 第三段：场景与 FAQ 摘要，稍微生活化 -->
+        <section class="topic-card">
+            <h2><span class="accent-line"></span>日常场景与常见疑问</h2>
+            <p>有时候朋友会问起：这个站点主要是做什么的？其实从信息索引的角度来看，它更像是一个起点——你可以在这里找到规则说明、版本动态以及一些操作上的提示。下面整理了几个经常被问到的问题，也许能帮你节省一点时间：</p>
+
+            <div class="faq-item">
+                <strong>❓ 页面加载后从哪里看起？</strong>
+                <p>通常首页会有主菜单和分类导航，按照自己的兴趣点进去就好。如果第一次访问，可以先浏览一下整体的板块设置。</p>
+            </div>
+            <div class="faq-item">
+                <strong>❓ 资料会不会过时？</strong>
+                <p>任何索引类页面都需要持续维护。目前看到的版本更新基本是稳定的，建议偶尔回访确认最新内容。</p>
+            </div>
+            <div class="faq-item">
+                <strong>❓ 有没有更详细的专题文章？</strong>
+                <p>这个页面本身是一个索引入口，更深入的专题内容通常会链接到站内的独立页面。你可以通过 <a href="https://cn-kai-yuan.com" class="inline-link">开元棋牌</a> 的导航找到对应分类。</p>
+            </div>
+
+            <div class="divider-soft"></div>
+            <p style="color: #5c534a; font-size: 0.96rem;">对我来说，整理这些资料最大的收获是学会了怎么把零散的信息归类、标注、再整理成易读的结构。如果你也在做类似的事情，希望这份索引能给你一点启发。</p>
+        </section>
+
+        <!-- 页尾访问提示 -->
+        <footer class="page-footer">
+            <div class="footer-note">
+                📎 如果你对原始信息源感兴趣，不妨直接访问 <a href="https://cn-kai-yuan.com">开元棋牌</a> 浏览完整内容
+            </div>
+            <small>杂志专题版 · 资料索引页 · 保持更新</small>
+        </footer>
+    </div>
+</body>
+</html>
